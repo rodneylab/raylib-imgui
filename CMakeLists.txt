@@ -19,8 +19,9 @@ include(cmake/StaticAnalysers.cmake)
 enable_clang_tidy()
 
 set(CMAKE_MODULE_PATH "${CMAKE_MODULE_PATH};${PROJECT_SOURCE_DIR}/cmake")
-# option(RUN_TESTS "Enable tests" ON) include(coverage)
-# add_coverage_target("Catch_tests/*")
+option(RUN_TESTS "Enable tests" ON)
+include(coverage)
+add_coverage_target("Catch_tests/*")
 
 include(Dependencies.cmake)
 raylib_imgui_setup_dependencies()
@@ -48,8 +49,11 @@ if(APPLE)
     target_link_libraries(RaylibImGuiApp PUBLIC "-framework OpenGL")
 endif()
 
-# option(RUN_UNIT_TESTS "Run Catch2 unit tests" ON) if(RUN_UNIT_TESTS)
-# enable_testing() add_subdirectory(Catch_tests) endif()
+option(RUN_UNIT_TESTS "Run Catch2 unit tests" ON)
+if(RUN_UNIT_TESTS)
+    enable_testing()
+    add_subdirectory(Catch_tests)
+endif()
 
 # Make this project the startup project
 set_property(DIRECTORY PROPERTY VS_STARTUP_PROJECT "RaylibImGuiApp")
