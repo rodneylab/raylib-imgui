@@ -15,8 +15,6 @@ target_compile_options(
         "$<${gcc_like_cxx}:$<BUILD_INTERFACE:-pedantic-errors;-Werror;-Wall;-Weffc++;-Wextra;-Wconversion;-Wsign-conversion>>"
         "$<${msvc_cxx}:$<BUILD_INTERFACE:-W4>>")
 
-include(cmake/StaticAnalysers.cmake)
-enable_clang_tidy()
 
 set(CMAKE_MODULE_PATH "${CMAKE_MODULE_PATH};${PROJECT_SOURCE_DIR}/cmake")
 option(RUN_TESTS "Enable tests" ON)
@@ -25,6 +23,9 @@ add_coverage_target("Catch_tests/*")
 
 include(Dependencies.cmake)
 raylib_imgui_setup_dependencies()
+
+include(cmake/StaticAnalysers.cmake)
+enable_clang_tidy()
 
 add_executable(RaylibImGuiApp src/main.cpp src/game/game.cpp)
 set_target_properties(RaylibImGuiApp PROPERTIES CXX_CLANG_TIDY

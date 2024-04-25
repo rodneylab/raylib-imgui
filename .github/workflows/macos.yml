@@ -21,7 +21,7 @@ jobs:
         with:
           clangtidy: true
           cmake: true
-          compiler: llvm-15.0.7
+          compiler: llvm-14.0.6
       - name: configure
         run: |
           cmake -H. -Bbuild -G "Unix Makefiles" -DCMAKE_BUILD_TYPE="Debug"
