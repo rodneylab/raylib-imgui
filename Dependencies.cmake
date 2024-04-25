@@ -1,11 +1,16 @@
 include(cmake/CPM.cmake)
 
 function(raylib_imgui_setup_dependencies)
+# Requires C++ 17
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
     message(STATUS "Include Dear ImGui")
     FetchContent_Declare(
         ImGui
         GIT_REPOSITORY https://github.com/ocornut/imgui
-        GIT_TAG 277ae93c41314ba5f4c7444f37c4319cdf07e8cf) # v1.90.4
+        GIT_TAG 231cbee0fc4f59dbe5b8b853a11b08dc84e57c65) # v1.90.5
     FetchContent_MakeAvailable(ImGui)
     FetchContent_GetProperties(ImGui SOURCE_DIR IMGUI_DIR)
 
