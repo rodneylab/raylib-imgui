@@ -1,10 +1,10 @@
 include(cmake/CPM.cmake)
 
 function(raylib_imgui_setup_dependencies)
-# Requires C++ 17
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_EXTENSIONS OFF)
+    # Requires C++ 17
+    set(CMAKE_CXX_STANDARD 17)
+    set(CMAKE_CXX_STANDARD_REQUIRED ON)
+    set(CMAKE_CXX_EXTENSIONS OFF)
 
     message(STATUS "Include Dear ImGui")
     FetchContent_Declare(
