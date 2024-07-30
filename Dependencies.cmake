@@ -10,7 +10,7 @@ function(raylib_imgui_setup_dependencies)
     FetchContent_Declare(
         ImGui
         GIT_REPOSITORY https://github.com/ocornut/imgui
-        GIT_TAG 231cbee0fc4f59dbe5b8b853a11b08dc84e57c65) # v1.90.5
+        GIT_TAG cb16be3a3fc1f9cd146ae24d52b615f8a05fa93d) # v1.90.9
     FetchContent_MakeAvailable(ImGui)
     FetchContent_GetProperties(ImGui SOURCE_DIR IMGUI_DIR)
 
@@ -30,16 +30,18 @@ function(raylib_imgui_setup_dependencies)
     )# v0.5.1
 
     message(STATUS "Include fmtlib")
-    cpmaddpackage("gh:fmtlib/fmt#e69e5f977d458f2650bb346dadf2ad30c5320281"
-    )# 10.x
+    cpmaddpackage("gh:fmtlib/fmt#0c9fce2ffefecfdce794e1859584e25877b7b592"
+    )# 11.0.2
 
     message(STATUS "Include raylib")
     cpmaddpackage("gh:raysan5/raylib#ae50bfa2cc569c0f8d5bc4315d39db64005b1b0"
     )# v5.0
 
     message(STATUS "Include spdlog")
-    cpmaddpackage("gh:gabime/spdlog#7c02e204c92545f869e2f04edaab1f19fe8b19fd"
-    )# v1.13.0
+    #cpmaddpackage("gh:gabime/spdlog#7c02e204c92545f869e2f04edaab1f19fe8b19fd"
+    #)# v1.13.0
+    cpmaddpackage("gh:gabime/spdlog#27cb4c76708608465c413f6d0e6b8d99a4d84302"
+    )# v1.14.1
 
     message(STATUS "Include rlImGui")
     FetchContent_Declare(
