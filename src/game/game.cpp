@@ -37,11 +37,14 @@ void draw_scene(const Camera &camera,
     DrawFPS(constants::kFPSPositionX, constants::kFPSPositionY);
 }
 
-int Game_GetTickrate()
-{
-    constexpr int kTickrate{128};
-    return kTickrate;
-}
+// namespace
+// {
+// int Game_GetTickrate()
+// {
+//     constexpr int kTickrate{128};
+//     return kTickrate;
+// }
+// } // namespace
 
 void Game_Update(std::queue<int> *key_queue, bool *debug_menu)
 {

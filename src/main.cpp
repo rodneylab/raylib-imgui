@@ -11,6 +11,8 @@
 #include <queue>
 #include <string>
 
+namespace
+{
 void setup_camera(Camera3D &camera)
 {
     camera.position = Vector3{constants::kCameraPositionX,
@@ -27,14 +29,15 @@ void update_cube(const float frame_time,
                  const Vector3 &cube_velocity,
                  Vector3 &cube_position)
 {
-    cube_position = Vector3{cube_position.x + frame_time * cube_velocity.x,
-                            cube_position.y + frame_time * cube_velocity.y,
-                            cube_position.z + frame_time * cube_velocity.z};
+    cube_position = Vector3{cube_position.x + (frame_time * cube_velocity.x),
+                            cube_position.y + (frame_time * cube_velocity.y),
+                            cube_position.z + (frame_time * cube_velocity.z)};
     if (cube_position.z > constants::kCubePositionMaxZ)
     {
         cube_position.z = constants::kCubePositionMinZ;
     }
 }
+} // namespace
 
 int main()
 {

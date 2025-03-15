@@ -38,8 +38,6 @@ function(raylib_imgui_setup_dependencies)
     )# v5.0
 
     message(STATUS "Include spdlog")
-    #cpmaddpackage("gh:gabime/spdlog#7c02e204c92545f869e2f04edaab1f19fe8b19fd"
-    #)# v1.13.0
     cpmaddpackage("gh:gabime/spdlog#27cb4c76708608465c413f6d0e6b8d99a4d84302"
     )# v1.14.1
 
