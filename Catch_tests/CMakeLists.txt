@@ -1,6 +1,6 @@
 message(STATUS "Include Catch2")
-cpmaddpackage("gh:catchorg/Catch2#b5373dadca40b7edc8570cf9470b9b1cb1934d40"
-)# v3.6.0
+cpmaddpackage("gh:catchorg/Catch2#fa43b77429ba76c462b1898d6cd2f2d7a9416b14"
+)# v3.7.1
 
 list(APPEND CMAKE_MODULE_PATH ${Catch2_SOURCE_DIR}/extras)
 
