@@ -5,7 +5,7 @@ repos:
         stages:
           - commit-msg
     repo: https://github.com/commitizen-tools/commitizen
-    rev: v4.7.1
+    rev: v4.7.2
   - hooks:
       - id: gitleaks
     repo: https://github.com/gitleaks/gitleaks
